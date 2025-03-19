@@ -1,0 +1,24 @@
+From f4acacf47a546e8f0ea87d46315fca1d61fbbe14 Mon Sep 17 00:00:00 2001
+From: kripal-samsung <k.makvana@samsung.com>
+Date: Wed, 19 Mar 2025 16:40:55 +0530
+Subject: [PATCH] os/kernel/silent_reboot: add reference to get_errno
+
+---
+ os/kernel/silent_reboot/silent_reboot.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/os/kernel/silent_reboot/silent_reboot.c b/os/kernel/silent_reboot/silent_reboot.c
+index ea58ec383..bae3e9520 100644
+--- a/os/kernel/silent_reboot/silent_reboot.c
++++ b/os/kernel/silent_reboot/silent_reboot.c
+@@ -28,6 +28,7 @@
+ #include <stdlib.h>
+ #include <stdbool.h>
+ #include <time.h>
++#include <errno.h>
+ #include <tinyara/clock.h>
+ #include <tinyara/wdog.h>
+ 
+-- 
+2.25.1
+
