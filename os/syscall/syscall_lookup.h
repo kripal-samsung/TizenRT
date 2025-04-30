@@ -144,9 +144,7 @@ SYSCALL_LOOKUP(waitid,                  4, STUB_waitid)
 #ifndef CONFIG_BUILD_KERNEL
 SYSCALL_LOOKUP(exec,                     4, STUB_exec)
 #endif
-#ifdef CONFIG_LIBC_EXECFUNCS
 SYSCALL_LOOKUP(execv,                    2, STUB_execv)
-#endif
 #endif
 
 /* The following are only defined is signals are supported in the TinyAra
@@ -200,12 +198,10 @@ SYSCALL_LOOKUP(read,                    3, STUB_read)
 SYSCALL_LOOKUP(write,                   3, STUB_write)
 SYSCALL_LOOKUP(pread,                   4, STUB_pread)
 SYSCALL_LOOKUP(pwrite,                  4, STUB_pwrite)
-#  ifdef CONFIG_FS_AIO
 SYSCALL_LOOKUP(aio_read,                1, SYS_aio_read)
 SYSCALL_LOOKUP(aio_write,               1, SYS_aio_write)
 SYSCALL_LOOKUP(aio_fsync,               2, SYS_aio_fsync)
 SYSCALL_LOOKUP(aio_cancel,              2, SYS_aio_cancel)
-#  endif
 #  ifndef CONFIG_DISABLE_POLL
 SYSCALL_LOOKUP(poll,                    3, STUB_poll)
 SYSCALL_LOOKUP(select,                  5, STUB_select)
@@ -213,9 +209,7 @@ SYSCALL_LOOKUP(select,                  5, STUB_select)
 #endif
 
 /* Board support */
-#ifdef CONFIG_LIB_BOARDCTL
 SYSCALL_LOOKUP(boardctl,                2, STUB_boardctl)
-#endif
 
 /* The following are defined if file descriptors are enabled */
 

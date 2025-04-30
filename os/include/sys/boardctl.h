@@ -66,7 +66,6 @@
 #include <arch/chip/boardctl.h>
 #endif
 
-#ifdef CONFIG_LIB_BOARDCTL
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -178,5 +177,5 @@ int boardctl(unsigned int cmd, uintptr_t arg);
 					boardctl(BOARDIOC_RESET, EXIT_SUCCESS);	\
 				} while (0)
 
-#endif /* CONFIG_LIB_BOARDCTL */
+
 #endif /* __INCLUDE_SYS_BOARDCTL_H */

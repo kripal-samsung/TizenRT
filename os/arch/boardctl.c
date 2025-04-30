@@ -67,7 +67,6 @@
 #include <tinyara/board.h>
 #include <tinyara/arch.h>
 
-#ifdef CONFIG_LIB_BOARDCTL
 /****************************************************************************
  * Public Functions
  ****************************************************************************/
@@ -186,4 +185,3 @@ int boardctl(unsigned int cmd, uintptr_t arg)
 
 	return OK;
 }
-#endif /* CONFIG_LIB_BOARDCTL */

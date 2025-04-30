@@ -283,15 +283,11 @@
 #define SYS_write                      (__SYS_descriptors + 3)
 #define SYS_pread                      (__SYS_descriptors + 4)
 #define SYS_pwrite                     (__SYS_descriptors + 5)
-#ifdef CONFIG_FS_AIO
 #define SYS_aio_read                   (__SYS_descriptors + 6)
 #define SYS_aio_write                  (__SYS_descriptors + 7)
 #define SYS_aio_fsync                  (__SYS_descriptors + 8)
 #define SYS_aio_cancel                 (__SYS_descriptors + 9)
 #define __SYS_poll                     (__SYS_descriptors + 10)
-#else
-#define __SYS_poll                     (__SYS_descriptors + 6)
-#endif
 #ifndef CONFIG_DISABLE_POLL
 #define SYS_poll                       __SYS_poll
 #define SYS_select                     (__SYS_poll + 1)
@@ -304,12 +300,9 @@
 #endif
 
 /* Board support */
-#ifdef CONFIG_LIB_BOARDCTL
 #define SYS_boardctl                  __SYS_boardctl
 #define __SYS_filedesc                (__SYS_boardctl + 1)
-#else
-#define __SYS_filedesc                __SYS_boardctl
-#endif
+
 
 /* The following are defined if file descriptors are enabled */
 

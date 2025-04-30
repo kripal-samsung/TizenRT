@@ -55,8 +55,6 @@
  ****************************************************************************/
 
 #include <tinyara/config.h>
-
-#ifdef CONFIG_LIBC_EXECFUNCS
 #include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -167,4 +165,3 @@ int execv(FAR const char *path, FAR char *const argv[])
 	return ERROR;
 }
 
-#endif							/* CONFIG_LIBC_EXECFUNCS */
